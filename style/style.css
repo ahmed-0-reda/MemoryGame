@@ -23,7 +23,7 @@ p {
   position: relative;
   background-attachment: fixed;
   width: 100%;
-  min-height: 100vw;
+  min-height: 100vh;
   top: 0;
   background-position: center;
   background-size: cover;
