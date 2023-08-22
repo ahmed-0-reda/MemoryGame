@@ -23,13 +23,13 @@ p {
   position: relative;
   background-attachment: fixed;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vw;
   top: 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 40;
-  padding-top: 100px;
+/*   padding-top: 100px; */
   transition: background-image 3s;
 }
 @media (max-width: 767px) {
