@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --mainColor: #004268;
+  --backFaceColor: #00000073;
+  /* --normalWidth: 850px; */
+  --small-width: 600px;
+  --small-height: 600px;
+  --medium-width: 700px;
+  --medium-height: 700px;
+  --large-width: 750px;
+  --large-height: 750px;
+  --backGround: rgba(0, 0, 0, 0.801);
+}
+p {
+  color: #fff;
+}
+.container {
+  position: relative;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+  padding-top: 20px;
+  transition: background-image 3s;
+}
+@media (max-width: 767px) {
+  .container {
+    background-image: url("photo/wallpaperphoto/walpaperSmall.jpg");
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    background-image: url("photo/wallpaperphoto/wallpaperMedium.jpg");
+  }
+}
+@media (min-width: 1023px) {
+  .container {
+    background-image: url("photo/wallpaperphoto/wallpaperLarge.jpg");
+  }
+}
+.container::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+
+.start-game {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000096;
+  z-index: 15;
+}
+.start-game p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #004268;
+  padding: 10px 15px;
+  background-color: #000;
+  border-radius: 50px;
+  font-size: 25px;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 0px 5px #004268ad;
+  cursor: pointer;
+}
+.start-game p:nth-child(2) {
+  display: none;
+}
+.start-game p:nth-child(2).turnon {
+  display: block;
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
+
+.info {
+  margin: auto;
+  width: var(--normalWidth);
+  background-color: var(--backFaceColor);
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  flex-basis: 33%;
+  user-select: none;
+  z-index: 20;
+  overflow: hidden;
+  justify-content: center;
+}
+.info p {
+  flex-basis: 33%;
+}
+@media (max-width: 767px) {
+  .info {
+    width: var(--small-width);
+    font-size: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .info {
+    width: var(--medium-width);
+    font-size: 15px;
+  }
+}
+@media (min-width: 1023px) {
+  .info {
+    width: var(--large-width);
+    font-size: 20px;
+  }
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+
+.content {
+  width: var(--normalWidth);
+  background-color: var(--backFaceColor);
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .content {
+    width: var(--small-width);
+    height: var(--small-height);
+  }
+}
+@media (min-width: 768px) {
+  .content {
+    width: var(--medium-width);
+    height: var(--medium-height);
+  }
+}
+@media (min-width: 1023px) {
+  .content {
+    width: var(--large-width);
+    height: var(--large-height);
+  }
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+
+.content span.for-border-right-top::after {
+  width: 0.5px;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  animation-name: bottom-to-top;
+}
+.content span.for-border-right-top::before {
+  width: 10px;
+  height: 0.5px;
+  top: 0;
+  left: 0;
+  animation-name: lift-to-right;
+}
+.content span.for-border-left-button::after {
+  width: 10px;
+  height: 0.5px;
+  bottom: 0;
+  right: 0;
+  animation-name: right-to-left;
+}
+.content span.for-border-left-button::before {
+  width: 0.5px;
+  height: 10px;
+  top: 0;
+  right: 0;
+  animation-name: top-to-bottom;
+}
+
+.content span.for-border-right-top::after,
+.content span.for-border-right-top::before,
+.content span.for-border-left-button::after,
+.content span.for-border-left-button::before {
+  content: "";
+  position: absolute;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: stop;
+  animation-duration: 4s;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 7px 3px var(--mainColor);
+  display: block;
+}
+/* the Secound 4 Lines */
+.content span.point2::after,
+.content span.point2::before,
+.content span.point2::after,
+.content span.point2::before {
+  animation-direction: normal;
+  animation-delay: 0.2s;
+}
+/* the Thired 4 Lines */
+.content span.point3::after,
+.content span.point3::before,
+.content span.point3::after,
+.content span.point3::before {
+  animation-direction: normal;
+  animation-delay: 0.4s;
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+@keyframes lift-to-right {
+  from {
+    left: 0%;
+    top: 0%;
+  }
+  to {
+    left: calc(100% - 10px);
+    bottom: 100%;
+  }
+}
+@keyframes right-to-left {
+  from {
+    right: 0%;
+  }
+  to {
+    right: calc(100% - 10px);
+  }
+}
+@keyframes top-to-bottom {
+  from {
+    top: 0%;
+  }
+  to {
+    top: calc(100% - 10px);
+  }
+}
+@keyframes bottom-to-top {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: calc(100% - 10px);
+  }
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+
+.gamecontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: inherit;
+  margin: 20px auto;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  width: 23%;
+  height: 23%;
+}
+.card.isflip {
+  transform: rotateY(-180deg);
+}
+.card.match {
+  transform: rotateY(-180deg);
+}
+.gamecontainer.stop {
+  pointer-events: none;
+}
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+.gamecontainer .card .front {
+  background-color: var(--mainColor);
+}
+.content .card .back {
+  background-color: var(--backFaceColor);
+  transform: rotateY(180deg);
+}
+.content .card .back img {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+/* --------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------- */
+
+.gameover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  text-align: center;
+  visibility: hidden;
+  transition: all 4s;
+  overflow: hidden;
+  text-align: center;
+  background-color: #000000da;
+}
+.gameover.working {
+  visibility: visible;
+}
+.gameover p {
+  position: absolute;
+  font-size: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  user-select: none;
+}
+.gameover p.playagain {
+  font-size: 25px;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50px;
+  border: px solid var(--mainColor);
+  background-color: var(--mainColor);
+  cursor: pointer;
+  top: 50%;
+  transform: translate(-50%, 160px);
+}
+.gameover p span {
+  animation-name: motion;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+.gameover p span:first-child {
+  transform: translatey(10px);
+  animation-delay: 0.2s;
+  color: rgb(0, 63, 82);
+}
+.gameover p span:nth-child(2) {
+  animation-delay: 0.4s;
+  color: rgb(0, 99, 133);
+}
+.gameover p span:nth-child(3) {
+  animation-delay: 0.6s;
+  color: rgb(248, 198, 61);
+}
+
+.gameover p span:nth-child(5) {
+  animation-delay: 0.8s;
+  color: rgb(0, 63, 82);
+}
+.gameover p span:nth-child(6) {
+  animation-delay: 1s;
+  color: rgb(0, 90, 133);
+}
+.gameover p span:nth-child(7) {
+  animation-delay: 1.2s;
+  color: rgb(248, 198, 61);
+}
+@keyframes motion {
+  0% {
+    transform: translatey(0px);
+  }
+  25% {
+    transform: translatey(100px);
+  }
+  50% {
+    transform: translatey(0px);
+  }
+  100% {
+    transform: translatey(100px);
+  }
+}
