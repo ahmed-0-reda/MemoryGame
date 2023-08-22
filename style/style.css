@@ -29,7 +29,7 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 40;
-  padding-top: 50px;
+  padding-top: 100px;
   transition: background-image 3s;
 }
 @media (max-width: 767px) {
