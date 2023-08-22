@@ -35,11 +35,13 @@ p {
 @media (max-width: 767px) {
   .container {
     background-image: url("photo/wallpaperphoto/walpaperSmall.jpg");
+    min-height: 50vh;
   }
 }
 @media (min-width: 768px) {
   .container {
-    background-image: url("photo/wallpaperphoto/wallpaperMedium.jpg");
+    background-image: url("photo/wallpaperphoto/wallpaperMedium.jpg")
+    ;min-height: 70vh;
   }
 }
 @media (min-width: 1023px) {
