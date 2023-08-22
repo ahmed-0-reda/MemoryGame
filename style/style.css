@@ -8,12 +8,12 @@
   --mainColor: #004268;
   --backFaceColor: #00000073;
   /* --normalWidth: 850px; */
-  --small-width: 600px;
-  --small-height: 600px;
-  --medium-width: 700px;
-  --medium-height: 700px;
-  --large-width: 750px;
-  --large-height: 750px;
+  --small-width: 500px;
+  --small-height: 500px;
+  --medium-width: 550px;
+  --medium-height: 550px;
+  --large-width: 600px;
+  --large-height: 600px;
   --backGround: rgba(0, 0, 0, 0.801);
 }
 p {
@@ -27,7 +27,8 @@ p {
   top: 0;
   background-position: center;
   background-size: cover;
-  z-index: 1000;
+  background-repeat: no-repeat;
+  z-index: 40;
   padding-top: 20px;
   transition: background-image 3s;
 }
